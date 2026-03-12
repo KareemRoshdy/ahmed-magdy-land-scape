@@ -1,0 +1,67 @@
+import BgBall from "../shared/BgBall";
+import Heading from "../shared/Heading";
+
+const aboutList = [
+  {
+    id: 1,
+    title: "رؤية تملأ الآفاق.. وخبرة تلامس الأرض.",
+    description: [
+      "نحن شركة رائدة في مجال تنسيق الحدائق (Landscaping) بالمملكة العربية السعودية، تأسسنا برؤية فريدة تهدف إلى تحويل المساحات الخارجية الصامتة إلى لوحات فنية تنبض بالحياة. نحن نؤمن أن الحديقة ليست مجرد مساحة خضراء، بل هي امتداد لراحة منزلك وعنوان لفخامة منشأتك.",
+    ],
+  },
+  {
+    id: 2,
+    title: "ما الذي يميزنا؟",
+    description: [
+      "نحن شركة رائدة في مجال تنسيق الحدائق (Landscaping) بالمملكة العربية السعودية، تأسسنا برؤية فريدة تهدف إلى تحويل المساحات الخارجية الصامتة إلى لوحات فنية تنبض بالحياة. نحن نؤمن أن الحديقة ليست مجرد مساحة خضراء، بل هي امتداد لراحة منزلك وعنوان لفخامة منشأتك.",
+    ],
+  },
+  {
+    id: 3,
+    title: "فلسفتنا في العمل:",
+    description: [
+      "الإبداع الهندسي: لا نبدأ التنفيذ إلا بمخططات دقيقة تضمن استغلال كل زاوية بأفضل شكل ممكن.",
+      "الجودة المستدامة: نختار أجود أنواع النباتات وأنظمة الري الموفرة للمياه، لنضمن لك حديقة تدوم لسنوات طويلة بأقل مجهود صيانة.",
+      "فريق متكامل: يضم فريقنا مهندسين زراعيين، مصممي لاندسكيب، وفنيين محترفين يعملون بشغف لتحويل خيالك إلى واقع ملموس.",
+    ],
+  },
+  {
+    id: 4,
+    title: "مهمتنا:",
+    description: [
+      "توفير بيئة خارجية هادئة وصحية لعملائنا، من خلال تقديم خدمات متكاملة تشمل التصميم، التنفيذ، والصيانة الدورية بأعلى معايير الجودة العالمية وأحدث التقنيات.",
+    ],
+  },
+];
+
+const About = () => {
+  return (
+    <section
+      id="about"
+      className="py-20 px-5 bg-[url('/images/meeting.png')] min-h-screen bg-cover bg-center bg-no-repeat relative z-20"
+    >
+      <div className="absolute top-0 left-0 w-full h-full bg-black/80 -z-1"></div>
+
+      <div className="container mx-auto z-50">
+        <Heading text="من نحن" />
+
+        <div className="mt-20 leading-relaxed space-y-10 ">
+          {aboutList.map((item) => (
+            <div key={item.id} className="z-10">
+              <h3 className="text-2xl font-bold mb-2 text-primary">
+                {item.title}
+              </h3>
+              <p className="text-(--beige) max-w-5xl">
+                {item.description.map((desc) => (
+                  <p key={desc}>{desc}</p>
+                ))}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
