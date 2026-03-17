@@ -45,14 +45,11 @@ const Header = () => {
             href="#contact"
             className={buttonVariants({
               className:
-                "hidden md:flex p-5 rounded-md cursor-pointer transition-all duration-300 hover:bg-primary/90",
+                "hidden! md:flex! p-5 rounded-md cursor-pointer transition-all duration-300 hover:bg-primary/90",
             })}
           >
             اطلب استشارة
           </Link>
-          {/* <Button className="hidden md:flex p-5 rounded-md cursor-pointer transition-all duration-300 hover:bg-primary/90">
-            اطلب استشارة
-          </Button> */}
 
           <ModeToggle />
           <MobileMenu />
