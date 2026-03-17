@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     siteName: "روضة الرياض",
     images: [
       {
-        url: "/images/img-01.png",
+        url: "/images/logo/main-logo.png",
         width: 1200,
         height: 630,
       },

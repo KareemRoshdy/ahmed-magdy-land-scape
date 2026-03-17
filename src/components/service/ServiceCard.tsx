@@ -14,7 +14,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ card }: ServiceCardProps) {
   return (
-    <Card className="relative mx-auto w-full max-w-sm pt-0 z-10">
+    <Card className="relative mx-auto w-full max-w-sm pt-0 z-10 bg-card/10 backdrop-blur-xl">
       <Image
         src={card.image}
         alt={card.title}

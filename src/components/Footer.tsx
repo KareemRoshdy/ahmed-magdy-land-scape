@@ -6,11 +6,11 @@ const Footer = () => {
   return (
     <section>
       <footer className="bg-card lg:grid lg:grid-cols-5 border-t ">
-        <div className="relative block h-32 lg:col-span-2 lg:h-full">
+        <div className="relative block h-[330px] lg:col-span-2 lg:h-full">
           <Image
             width={1000}
             height={1000}
-            src="/images/banner-2.png"
+            src="/images/logo/main-logo.png"
             alt="img"
             className="absolute inset-0 h-full w-full object-cover"
           />

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://kareem-landscap.vercel.app/",
     images: [
       {
-        url: "/images/img-01.png",
+        url: "/images/logo/main-logo.png",
         width: 1200,
         height: 630,
         alt: "مشاريع روضة الرياض",

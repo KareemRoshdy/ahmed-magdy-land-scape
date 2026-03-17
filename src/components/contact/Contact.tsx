@@ -20,28 +20,28 @@ const Contact = () => {
 
           <div className="space-y-5 z-20">
             <div className="flex items-center gap-4">
-              <h3 className="text-xl font-bold flex items-center gap-2">
+              <h3 className="text-sm md:text-xl font-bold flex items-center gap-2">
                 <LocationEdit />
                 العنوان:
               </h3>
-              <p>القاهرة, مصر</p>
+              <p className="text-sm">القاهرة, مصر</p>
             </div>
 
-            <div className="flex items-center gap-4">
-              <h3 className="text-xl font-bold flex items-center gap-2">
+            <div className="flex items-center gap-2">
+              <h3 className="text-sm md:text-xl font-bold flex items-center gap-2">
                 <PhoneCall />
                 الهاتف:
               </h3>
-              <p>123456789</p>
+              <p className="text-sm">123456789</p>
             </div>
 
-            <div className="flex items-center gap-4">
-              <h3 className="text-xl font-bold flex items-center gap-2">
+            {/* <div className="flex items-center gap-1">
+              <h3 className="text-sm md:text-xl font-bold flex items-center gap-2">
                 <Mail />
                 البريد الالكتروني:
               </h3>
-              <p>info@ahmedmagdy.com</p>
-            </div>
+              <p className="text-sm">info@ahmedmagdy.com</p>
+            </div> */}
 
             <div className="flex items-center gap-4 ">
               <Link

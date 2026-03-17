@@ -62,7 +62,10 @@ const ProjectCards = () => {
         <>
           <div className="grid grid-cols-2 md:grid-cols-3     lg:grid-cols-4 xl:grid-cols-5 gap-3 mt-10">
             {visibleProjects.map((item) => (
-              <Card key={item.id} className="p-1 z-10 md:h-[400px]">
+              <Card
+                key={item.id}
+                className="p-1 z-10 md:h-[400px]  bg-card/10 backdrop-blur-xl"
+              >
                 <CardContent className="p-1 w-full h-full">
                   <Image
                     src={item.image}
