@@ -1,6 +1,8 @@
 import Image from "next/image";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
     <section>
       <footer className="bg-card lg:grid lg:grid-cols-5 border-t ">
@@ -19,7 +21,7 @@ const Footer = () => {
             <div>
               <p>
                 <span className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
-                  Call us
+                  اتصل بنا
                 </span>
 
                 <a
@@ -31,8 +33,8 @@ const Footer = () => {
               </p>
 
               <ul className="mt-8 space-y-1 text-sm text-gray-700 dark:text-gray-200">
-                <li>Monday to Friday: 10am - 5pm</li>
-                <li>Weekend: 10am - 3pm</li>
+                <li>من الإثنين إلى الجمعة: 10 صباحًا - 5 مساءً</li>
+                <li>عطلة نهاية الأسبوع: 10 صباحًا - 3 مساءً</li>
               </ul>
 
               <ul className="mt-8 flex gap-6">
@@ -157,7 +159,7 @@ const Footer = () => {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <p className="font-medium text-gray-900 dark:text-white">
-                  Services
+                  الخدمات
                 </p>
 
                 <ul className="mt-6 space-y-4 text-sm">
@@ -166,7 +168,7 @@ const Footer = () => {
                       href="#"
                       className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                     >
-                      1on1 Coaching
+                      استشارة فردية
                     </a>
                   </li>
 
@@ -175,7 +177,7 @@ const Footer = () => {
                       href="#"
                       className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                     >
-                      Company Review
+                      مراجعة الشركات
                     </a>
                   </li>
 
@@ -184,7 +186,7 @@ const Footer = () => {
                       href="#"
                       className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                     >
-                      Accounts Review
+                      مراجعة الحسابات
                     </a>
                   </li>
 
@@ -193,7 +195,7 @@ const Footer = () => {
                       href="#"
                       className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                     >
-                      HR Consulting
+                      استشارات الموارد البشرية
                     </a>
                   </li>
 
@@ -202,7 +204,7 @@ const Footer = () => {
                       href="#"
                       className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                     >
-                      SEO Optimisation
+                      تحسين محركات البحث
                     </a>
                   </li>
                 </ul>
@@ -210,7 +212,7 @@ const Footer = () => {
 
               <div>
                 <p className="font-medium text-gray-900 dark:text-white">
-                  Company
+                  الشركة
                 </p>
 
                 <ul className="mt-6 space-y-4 text-sm">
@@ -219,7 +221,7 @@ const Footer = () => {
                       href="#"
                       className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                     >
-                      About
+                      من نحن
                     </a>
                   </li>
 
@@ -228,7 +230,7 @@ const Footer = () => {
                       href="#"
                       className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                     >
-                      Meet the Team
+                      فريق العمل
                     </a>
                   </li>
 
@@ -237,7 +239,7 @@ const Footer = () => {
                       href="#"
                       className="text-gray-700 transition hover:opacity-75 dark:text-gray-200"
                     >
-                      Accounts Review
+                      مراجعة الحسابات
                     </a>
                   </li>
                 </ul>
@@ -253,7 +255,7 @@ const Footer = () => {
                     href="#"
                     className="text-gray-500 transition hover:opacity-75 dark:text-gray-400"
                   >
-                    Terms &amp; Conditions
+                    الشروط والأحكام
                   </a>
                 </li>
 
@@ -262,7 +264,7 @@ const Footer = () => {
                     href="#"
                     className="text-gray-500 transition hover:opacity-75 dark:text-gray-400"
                   >
-                    Privacy Policy
+                    سياسة الخصوصية
                   </a>
                 </li>
 
@@ -271,13 +273,13 @@ const Footer = () => {
                     href="#"
                     className="text-gray-500 transition hover:opacity-75 dark:text-gray-400"
                   >
-                    Cookies
+                    سياسة ملفات تعريف الارتباط
                   </a>
                 </li>
               </ul>
 
               <p className="mt-8 text-xs text-gray-500 sm:mt-0 dark:text-gray-400">
-                © 2022. Company Name. All rights reserved.
+                © {year} جميع الحقوق محفوظة.
               </p>
             </div>
           </div>

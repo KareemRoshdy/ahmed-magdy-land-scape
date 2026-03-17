@@ -3,6 +3,7 @@ import { Cairo, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { cn } from "@/lib/utils";
+import Header from "@/components/shared/Header";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -31,17 +32,17 @@ export const metadata: Metadata = {
   authors: [{ name: "روضة الرياض" }],
   viewport: "width=device-width, initial-scale=1",
   icons: {
-    icon: "/favicon.ico", // تأكد من وجود ملف الأيقونة في فولدر public
+    icon: "/favicon.ico",
   },
   openGraph: {
     title: "روضة الرياض لتنسيق الحدائق واللاندسكيب",
     description:
       "نحول مساحاتكم الخارجية إلى واحات خضراء تنبض بالحياة بأحدث التصاميم العالمية.",
-    url: "https://your-domain.com", // ضع رابط موقعك هنا
+    url: "https://kareem-landscap.vercel.app/",
     siteName: "روضة الرياض",
     images: [
       {
-        url: "/images/img-01.png", // صورة تظهر عند مشاركة الرابط على السوشيال ميديا
+        url: "/images/img-01.png",
         width: 1200,
         height: 630,
       },
@@ -65,7 +66,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Header />
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>

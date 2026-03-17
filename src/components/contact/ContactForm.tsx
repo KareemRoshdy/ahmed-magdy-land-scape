@@ -26,16 +26,18 @@ import { Textarea } from "../ui/textarea";
 const formSchema = z.object({
   name: z
     .string()
-    .min(5, "Name must be at least 5 characters.")
-    .max(32, "Name must be at most 32 characters."),
-  email: z
+    .min(2, "الاسم يجب أن يكون على الأقل حرفين.")
+    .max(32, "الاسم يجب ألا يتجاوز 32 حرفًا."),
+
+  phone: z
     .string()
-    .min(20, "Email must be at least 20 characters.")
-    .max(100, "Email must be at most 100 characters."),
+    .min(10, "رقم الهاتف يجب أن يكون على الأقل 10 رقمًا.")
+    .max(15, "رقم الهاتف يجب ألا يتجاوز 15 رقمًا."),
+
   message: z
     .string()
-    .min(20, "Message must be at least 20 characters.")
-    .max(100, "Message must be at most 100 characters."),
+    .min(10, "الرسالة يجب أن تكون على الأقل 10 أحرف.")
+    .max(200, "الرسالة يجب ألا تتجاوز 200 حرف."),
 });
 
 export function ContactForm() {
@@ -43,13 +45,20 @@ export function ContactForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      email: "",
+      phone: "",
       message: "",
     },
   });
 
   function onSubmit(data: z.infer<typeof formSchema>) {
-    console.log(data);
+    const phone = "201119669558";
+
+    const message = `الاسم: ${data.name}\nرقم الجوال: ${data.phone}\nالرسالة: ${data.message}`;
+
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+    form.reset();
   }
 
   return (
@@ -87,18 +96,18 @@ export function ContactForm() {
               )}
             />
             <Controller
-              name="email"
+              name="phone"
               control={form.control}
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
-                  <FieldLabel htmlFor="form-rhf-demo-email">
-                    البريد الالكتروني
+                  <FieldLabel htmlFor="form-rhf-demo-phone">
+                    رقم الجوال
                   </FieldLabel>
                   <Input
                     {...field}
-                    id="form-rhf-demo-email"
+                    id="form-rhf-demo-phone"
                     aria-invalid={fieldState.invalid}
-                    placeholder="أدخل البريد الالكتروني"
+                    placeholder="أدخل رقم الجوال"
                     autoComplete="off"
                   />
                   {fieldState.invalid && (

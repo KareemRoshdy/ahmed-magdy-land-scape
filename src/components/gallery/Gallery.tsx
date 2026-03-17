@@ -1,6 +1,8 @@
 import Image from "next/image";
 import BgBall from "../shared/BgBall";
 import Heading from "../shared/Heading";
+import Link from "next/link";
+import { buttonVariants } from "../ui/button";
 
 const Gallery = () => {
   return (
@@ -172,6 +174,15 @@ const Gallery = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="text-center mt-10">
+          <Link
+            href={"/projects"}
+            className={buttonVariants({ className: "p-5" })}
+          >
+            عرض المزيد من مشاريعنا
+          </Link>
         </div>
       </div>
     </section>
