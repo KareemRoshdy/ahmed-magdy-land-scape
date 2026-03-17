@@ -62,11 +62,11 @@ const About = () => {
               <h3 className="text-2xl font-bold mb-2 text-primary">
                 {item.title}
               </h3>
-              <p className="text-(--beige) max-w-5xl">
+              <div className="text-(--beige) max-w-5xl">
                 {item.description.map((desc) => (
                   <p key={desc}>{desc}</p>
                 ))}
-              </p>
+              </div>
             </div>
           ))}
         </div>

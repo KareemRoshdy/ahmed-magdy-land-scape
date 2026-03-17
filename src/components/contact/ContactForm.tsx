@@ -29,6 +29,11 @@ const formSchema = z.object({
     .min(2, "الاسم يجب أن يكون على الأقل حرفين.")
     .max(32, "الاسم يجب ألا يتجاوز 32 حرفًا."),
 
+  address: z
+    .string()
+    .min(2, "العنوان يجب أن يكون على الأقل 2 أحرف.")
+    .max(100, "العنوان يجب ألا يتجاوز 100 حرفًا."),
+
   phone: z
     .string()
     .min(10, "رقم الهاتف يجب أن يكون على الأقل 10 رقمًا.")
@@ -45,6 +50,7 @@ export function ContactForm() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      address: "",
       phone: "",
       message: "",
     },
@@ -53,7 +59,7 @@ export function ContactForm() {
   function onSubmit(data: z.infer<typeof formSchema>) {
     const phone = "201119669558";
 
-    const message = `الاسم: ${data.name}\nرقم الجوال: ${data.phone}\nالرسالة: ${data.message}`;
+    const message = `الاسم: ${data.name}\nالعنوان: ${data.address}\nرقم الجوال: ${data.phone}\nالرسالة: ${data.message}`;
 
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
@@ -87,6 +93,27 @@ export function ContactForm() {
                     id="form-rhf-demo-name"
                     aria-invalid={fieldState.invalid}
                     placeholder="أدخل الاسم"
+                    autoComplete="off"
+                  />
+                  {fieldState.invalid && (
+                    <FieldError errors={[fieldState.error]} />
+                  )}
+                </Field>
+              )}
+            />
+            <Controller
+              name="address"
+              control={form.control}
+              render={({ field, fieldState }) => (
+                <Field data-invalid={fieldState.invalid}>
+                  <FieldLabel htmlFor="form-rhf-demo-address">
+                    العنوان
+                  </FieldLabel>
+                  <Input
+                    {...field}
+                    id="form-rhf-demo-address"
+                    aria-invalid={fieldState.invalid}
+                    placeholder="أدخل العنوان الخاص بك"
                     autoComplete="off"
                   />
                   {fieldState.invalid && (
